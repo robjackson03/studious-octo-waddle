@@ -2,25 +2,65 @@
 <html lang="en">
 
 <style>
+
+
+.title{
+  text-align: center;
+  
+  
+}
+.description{
+
+}
+.survey-form {
+
+}
+.name {
+
+}
+.email {
+
+}
+.number {
+
+}
+.submit {
+
+}
 body {
-  margin: 40px;
+  
+}
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 2px;
+  width: 100%;
+  height: 100%;
 }
 
-.sidebar {
+    .sidebar {
         grid-area: sidebar;
+        max-width: 80%;
+
+        
     }
 
     .sidebar2 {
         grid-area: sidebar2;
+       width: 90%;
     }
 
     .content {
         grid-area: content;
+        width: 90%;
+
     }
 
     .header {
         grid-area: header;
         text-align: center;
+        
+        
     }
 
     .footer {
@@ -30,9 +70,11 @@ body {
     .wrapper {
         background-color: #fff;
         color: #444;
+        text-align: left;
     }
 
   .wrapper {
+    margin:auto;
     display: grid;
     grid-gap: 1em;
     grid-template-areas:
@@ -43,7 +85,7 @@ body {
      "footer"
   }
 
-    @media only screen and (min-width: 500px)  {
+    @media only screen and (max-width: 500px)  {
     .wrapper {
 
         grid-template-columns: 20% auto;
@@ -55,23 +97,24 @@ body {
     }
     }
 
-    @media only screen and (min-width: 600px)   {
+    @media only screen and (min-width: 200px)   {
         .wrapper {
-      grid-gap: 20px;
-            grid-template-columns: 120px auto 120px;
+      grid-gap: 10px;
+            grid-template-columns: 200px auto 200x;
             grid-template-areas:
       "header  header  header"
             "sidebar content sidebar2"
             "footer  footer  footer";
-            max-width: 600px;
-        }
+            max-width: 100%;
+            
+                    }
     }
 
 .box {
-  background-color: #444;
+ 
   color: #fff;
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px;
   font-size: 150%; 
 }
 
@@ -81,28 +124,196 @@ body {
 }
 
 .sidebar2 {
-  background-color: #ccc;
-  color: #444;
+  background-color: blue;
+  color: white;
 }
 
+.sidebar {
+  background-color:blue;
+  color: white;
+}
 
+.content {
+  background-color:pink;
+  color: #444;
+    }
+.box content{
+  
+}
 
-Resources
+/* Style inputs, select elements and textareas */
+input[type=text], select, textarea{
+  width: 100%;
+  padding: 2px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
 
+/* Style the label to display next to the inputs */
+label {
+  padding: 8px 8px 8px 0;
+  display: inline-block;
+  font-size: small;
+}
 
+/* Style the submit button */
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+/* Style the container */
+.fmcontainer {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* Floating column for labels: 25% width */
+.col-25 {
+  float: left;
+  width: 35%;
+  margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 65%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
 </style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Input Form</title>
+    <title >Art Store Customer Survey</title>
 </head>
 <body>
+ 
     <div class="wrapper">
-  <div class="box header">Smart User Form</div>
-  <div class="box sidebar">Sidebar</div>
-  <div class="box sidebar2">Sidebar 2</div>
-  <div class="box content">Survey
-    <br /> More content than we had before so this column is now quite tall.</div>
+  <div class="box header" ><h1 id="title">Smart User Form</h1></div>
+  <div class="box sidebar"><p id="description"> Filling out this form will allow the Art Store to better serve you</p></div>
+  <div class="box sidebar2">
+ </div>
+  <div class="box content">
+    <br />
+      <div class="fmcontainer">
+      <form id="survey-form">
+      
+        <div class="row">
+          <div class="col-25">
+            <label for="name" id="name-label">Name:</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="name" name="name" required placeholder="Your name..">
+          </div>
+        </div>
+                  
+        <div class = "row">
+          <div class="col-25">
+            <label for "email" id="email-label">Email:</label>
+          </div>
+          <div class="col-75">
+            <input type="email" required id="email" name="email"
+            placeholder="Your email..">
+          </div>
+        </div>
+        <div class = "row">
+          <div class="col-25">
+            <label for "number" id="number-label">Age:</label>
+          </div>
+          <div class="col-75">
+            <input type="number" id="number" name="number" min="1" max="120"
+            placeholder="Your age is..">
+          </div>
+        </div>
+                 <div class = "row">
+          <div class="col-25">
+            <label for "choose" name="choose">Why did you choose the Art Shop?</label>
+          </div>
+          <div class="col-75">
+            <div>
+              <input type="checkbox" id="inventory" name="choose" value="inventory">
+              <label for="inventory">inventory</label>
+                      <input type="checkbox" id="mission" name="choose" value="mission">
+              <label for="mission">mission</label>
+              <input type="checkbox" id="location" name="choose" value="location">
+                      <label for="location">location</label>
+              <input type="checkbox" id="prices" name="choose" value="prices">
+                      <label for="prices">prices</label>
+                        </div>
+          </div>
+         </div>
+         <div class = "row">
+          <div class="col-25">
+            <label for "find" name="find">Did you find everything you where looking for?</label>
+          </div>
+          <div class="col-75">
+            <div>
+              <input type="radio" id="yes" name="find" value="yes">
+              <label for="yes">yes</label>
+                      <input type="radio" id="no" name="find" value="no">
+              <label for="no">no</label>
+              
+                        </div>
+          </div>
+         </div>
+         <div class = "row">
+          <div class="col-25">
+            <label for "planning" id="dropdown">How likely will you shop again?</label>
+          </div>
+          <div class="col-75">
+            <div>
+                <select id="dropdown" for "planning">
+                <option value="highly">highly</option>
+                <option value="likely">likely</option>
+                <option value="notsure">not sure</option>
+                <option value="unlikley">unlikely</option>
+                <option value="not">not</option>
+              </select>
+            </div>
+          </div>
+         </div>
+         <div class="row">
+          <div class="col-25">
+            <label for="comments">Comments:</label>
+          </div>
+          <div class="col-75">
+            <textarea id= "comments" name="comments" placeholder="Please tell us how we are doing?" style="height:200px"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <input type="submit" id="submit" value="Submit">
+        </div>
+
+        </div>
+              
+                 
+    </form>
+  </div>
+     </div>
   <div class="box footer">Footer</div>
 </div>   
 </body>
